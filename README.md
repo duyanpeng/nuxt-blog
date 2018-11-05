@@ -1,6 +1,8 @@
 # nuxt-blog
 
-> My groundbreaking Nuxt.js project
+> 基于nuxt,vue服务端渲染博客。
+
+> 地址:www.duyanpeng.com
 
 ## Build Setup
 
