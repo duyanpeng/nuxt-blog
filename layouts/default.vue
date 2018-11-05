@@ -29,7 +29,7 @@
       fixed
       app
     >
-      <v-toolbar-side-icon @click="drawer = !drawer" />
+      <v-toolbar-side-icon @click="drawer = drawer" />
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
       <v-btn flat>面试</v-btn>  

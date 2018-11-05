@@ -1,61 +1,70 @@
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center>
-    <v-flex
+  <v-layout column justify-center align-center>
+    <!-- <v-flex
       xs12
       sm8
-      md6>
-      <v-card>
-        <v-card-title class="headline">Welcome to the Vuetify + Nuxt.js template</v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>For more information on Vuetify, check out the <a
-            href="https://vuetifyjs.com"
-            target="_blank">documentation</a>.</p>
-          <p>If you have questions, please join the official <a
-            href="https://chat.vuetifyjs.com/"
-            target="_blank"
-            title="chat">discord</a>.</p>
-          <p>Find a bug? Report it on the github <a
-            href="https://github.com/vuetifyjs/vuetify/issues"
-            target="_blank"
-            title="contribute">issue board</a>.</p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank">Nuxt Documentation</a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank">Nuxt GitHub</a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer/>
-          <v-btn
-            color="primary"
-            flat
-            nuxt
-            to="/inspire">Continue</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
+      md6> -->
+
+    <href-link v-for="item in dataList" :key="item.id" :href="item.href" :describe="item.describe" :title="item.title" :from="item.from"></href-link>
+
+    <!-- </v-flex> -->
   </v-layout>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
+import HrefLink from '~/components/HrefLink.vue'
 
 export default {
+  data() {
+    return {
+      dataList: [
+        {
+          id: 1,
+          href: 'https://juejin.im/post/5ac26089f265da23970709aa',
+          title: 'js数组简单算法面试速记',
+          describe: '排序，去重，斐波那契数列，深拷贝',
+          from: '原创'
+        },
+        {
+          id: 2,
+          href: 'https://juejin.im/post/5ac84501f265da2391485d38',
+          title: 'js获取元素位置方法总结',
+          describe: 'js获取元素位置方法总结',
+          from: '原创'
+        },
+        {
+          id: 3,
+          href: 'https://juejin.im/post/5ac249f76fb9a028cb2dccb9',
+          title: 'js继承面试速记(内容抄自高程三)',
+          describe: 'js继承面试速记(内容抄自高程三)',
+          from: '原创'
+        },
+        {
+          id: 4,
+          href: 'https://juejin.im/post/5be01548e51d4557dd6f09bb',
+          title: 'css实现垂直水平居中',
+          describe: 'css实现垂直水平居中',
+          from: '原创'
+        },
+        {
+          id: 5,
+          href: 'https://juejin.im/post/5be0159b6fb9a049ee7fe7f1',
+          title: 'css形变及动画',
+          describe: 'css形变及动画',
+          from: '原创'
+        },
+        {
+          id: 6,
+          href: 'https://juejin.im/post/5be015efe51d450b951e2d6e',
+          title: 'js数组、字符串方法',
+          describe: 'js数组、字符串方法',
+          from: '原创'
+        }
+      ]
+    }
+  },
   components: {
-    Logo,
-    VuetifyLogo
+    HrefLink
   }
 }
 </script>
