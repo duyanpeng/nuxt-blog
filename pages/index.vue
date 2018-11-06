@@ -6,7 +6,17 @@
       md6> -->
 
     <href-link v-for="item in dataList" :key="item.id" :href="item.href" :describe="item.describe" :title="item.title" :from="item.from"></href-link>
-
+    <!-- <v-flex xs12> -->
+          <v-card width="80%">
+            <v-card-text width="100%" style="text-align:center;">
+              <v-pagination
+                color="#1867c0"
+                v-model="page"
+                :length="5"
+              ></v-pagination>
+            </v-card-text>
+          </v-card>
+        <!-- </v-flex> -->
     <!-- </v-flex> -->
   </v-layout>
 </template>
@@ -17,6 +27,7 @@ import HrefLink from '~/components/HrefLink.vue'
 export default {
   data() {
     return {
+      page: 1,
       dataList: [
         {
           id: 1,
